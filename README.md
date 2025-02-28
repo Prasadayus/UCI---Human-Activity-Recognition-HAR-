@@ -2,8 +2,11 @@
 
 # **Human Activity Recognition using Machine Learning and Deep Learning**
 
+## **Project Title**
+### Solution for AI/ML for Sustainability at IITGN - Selection Task 1  
+
 ## **Overview**
-This project utilizes the UCI HAR dataset to classify various human activities using both traditional machine learning (ML) models and deep learning (DL) approaches. The study includes:
+This project is a solution for **Task 1** under the **AI/ML for Sustainability** initiative at **IIT Gandhinagar (IITGN)**. It utilizes the **UCI HAR dataset** to classify various human activities using both traditional **machine learning (ML) models** and **deep learning (DL) approaches**.  
 
 - **ML models (Random Forest, SVM, Logistic Regression)** trained on features generated using the **TSFEL library**.
 - **Deep learning models (LSTM + 1D CNN)** trained directly on raw sensor data (accelerometer readings).
@@ -30,30 +33,37 @@ This helps traditional ML models learn meaningful patterns from raw sensor data.
 ## **Models & Performance Comparison**
 
 ### **1. Machine Learning Models**
-| Model                | Accuracy (TSFEL) | Accuracy (TSFEL + PCA) | Accuracy (Predefined) |
-|----------------------|-----------------|------------------------|------------------------|
-| SVM                 | 92.34%          | 90.12%                 | 94.78%                 |
-| Random Forest       | 88.75%          | 86.42%                 | 91.56%                 |
-| Logistic Regression | 85.23%          | 83.79%                 | 89.34%                 |
+| Model                | Accuracy (TSFEL) | Time (TSFEL) | Accuracy (TSFEL + PCA) | Time (TSFEL + PCA) | Accuracy (Predefined) |
+|----------------------|-----------------|-------------|------------------------|--------------------|------------------------|
+| SVM                 | 95.25%          | 2.72s       | 94.98%                 | 2.27s              | 96.47%                 |
+| Random Forest       | 93.45%          | 31.32s        | 91.89%                 | 22.36s               | 92.87%                 |
+| Logistic Regression | 95.55%          | 16.01s        | 94.67%                 | 0.39s               | 96.13%                 |
 
 ### **2. Deep Learning Model (LSTM + 1D CNN)**
-| Feature Set         | Accuracy |
-|---------------------|----------|
-| Raw Sensor Data    | 94.12%   |
-| PCA Transformed    | 91.85%   |
-| Predefined Features| 96.78%   |
-
-## **Key Observations**
-- **SVM with predefined features** performed the best among ML models.
-- **LSTM + CNN outperformed traditional ML models**, especially when trained on predefined features.
-- **TSFEL-generated features provided strong results**, but PCA slightly reduced accuracy.
-- **Predefined features consistently yielded the best performance** across both ML and DL approaches.
-
-## **Conclusion**
-- **If using ML models**, **SVM with predefined features** is the best choice.
-- **If using deep learning**, **LSTM + CNN trained on predefined features** achieves the highest accuracy.
-- **Feature engineering plays a crucial role in performance**—predefined features outperform TSFEL-generated ones, but TSFEL is still a strong alternative when raw sensor data is available.
-
+| Feature Set         | Accuracy | Time |
+|---------------------|----------|------|
+| TSFEL Feature    | 87.24%   | 264.05s |
+| PCA Transformed + TSFEL   | 88.16%   | 61.97s |
+| Predefined Features| 87.92%   | - |
 
 ---
-📌 **Note:** The results may vary depending on hyperparameter tuning and dataset preprocessing.
+
+## **Key Observations**
+1. **SVM with predefined features achieved the highest accuracy (96.47%)**, making it the best-performing ML model.
+2. **Logistic Regression provided competitive results (95.55% with TSFEL, 96.13% with predefined features) while being the most efficient model.**
+3. **Random Forest had longer training times and showed slightly lower accuracy than SVM and Logistic Regression.**
+4. **PCA transformation reduced accuracy slightly but significantly reduced training time.**
+5. **Deep learning models underperformed compared to ML models** and had much higher training times.
+
+---
+
+## **Conclusion**
+- **Best Accuracy:** **SVM with predefined features**.
+- **Best Speed-Accuracy Tradeoff:** **Logistic Regression with PCA-transformed TSFEL features**.
+- **Deep learning is computationally expensive** and did not outperform ML models.
+- **PCA helps in reducing computation time but slightly impacts accuracy.**
+- **Feature engineering plays a crucial role in model performance**—predefined features outperform TSFEL-generated ones, but **TSFEL remains a strong alternative** when raw sensor data is used.  
+
+---
+
+📌 **Note:** The results may vary depending on **hyperparameter tuning, dataset preprocessing, and computational resources**.
