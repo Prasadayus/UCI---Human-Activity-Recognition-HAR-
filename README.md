@@ -6,7 +6,7 @@
 ### Solution for AI/ML for Sustainability at IITGN - Selection Task 1  
 
 ## **Overview**
-This project is a solution for **Task 1** under the **AI/ML for Sustainability** initiative at **IIT Gandhinagar (IITGN)**. It utilizes the **UCI HAR dataset** to classify various human activities using both traditional **machine learning (ML) models** and **deep learning (DL) approaches**.  
+This project is a solution for **Task 1** under the **AI/ML for HealthCare** initiative at **IIT Gandhinagar (IITGN)**. It utilizes the **UCI HAR dataset** to classify various human activities using both traditional **machine learning (ML) models** and **deep learning (DL) approaches**.  
 
 - **ML models (Random Forest, SVM, Logistic Regression)** trained on features generated using the **TSFEL library**.
 - **Deep learning models (LSTM + 1D CNN)** trained directly on raw sensor data (accelerometer readings).
